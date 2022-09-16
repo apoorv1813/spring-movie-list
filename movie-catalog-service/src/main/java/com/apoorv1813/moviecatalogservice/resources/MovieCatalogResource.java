@@ -1,6 +1,6 @@
 package com.apoorv1813.moviecatalogservice.resources;
 
-import com.apoorv1813.moviecatalogservice.modules.CatalogItem;
+import com.apoorv1813.moviecatalogservice.models.CatalogItem;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.apoorv1813.moviecatalogservice.modules;
+package com.apoorv1813.moviecatalogservice.models;
 
 public class CatalogItem {
     private String name;

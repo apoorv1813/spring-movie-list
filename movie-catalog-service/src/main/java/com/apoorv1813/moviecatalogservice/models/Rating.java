@@ -1,4 +1,4 @@
-package com.apoorv1813.ratingsdataservice.models;
+package com.apoorv1813.moviecatalogservice.models;
 
 public class Rating {
   private int movieId;

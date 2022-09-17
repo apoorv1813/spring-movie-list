@@ -1,8 +1,11 @@
-package com.apoorv1813.movieinfoservice.models;
+package com.apoorv1813.moviecatalogservice.models;
 
 public class Movie {
   private int movieId;
   private String name;
+
+  public Movie() {
+  }
 
   public Movie(int movieId, String name) {
     this.movieId = movieId;

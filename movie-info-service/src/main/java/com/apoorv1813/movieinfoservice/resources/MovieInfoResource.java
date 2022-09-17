@@ -14,6 +14,6 @@ public class MovieInfoResource {
   public Movie getMovieInfo(
       @PathVariable("movieId")
       int movieId) {
-    return new Movie(movieId, "Movie " + movieId);
+    return new Movie(movieId, "Movie " + movieId, "Description of Movie " + movieId);
   }
 }

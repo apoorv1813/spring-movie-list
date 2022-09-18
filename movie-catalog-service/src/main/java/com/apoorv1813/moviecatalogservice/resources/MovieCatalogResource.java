@@ -19,6 +19,9 @@ public class MovieCatalogResource {
   @Autowired
   private RestTemplate restTemplate;
 
+//  @Autowired
+//  private DiscoveryClient discoveryClient;
+
   //  @Autowired
   //  private WebClient.Builder webClientBuilder;
 

@@ -27,18 +27,19 @@ public class MovieCatalogResource {
       @PathVariable("userId")
       String userId) {
     UserRating userRating =
-        restTemplate.getForObject("http://localhost:8083/ratingsData/users/" + userId,
+        restTemplate.getForObject("http://ratings-data-service/ratingsData/users/" + userId,
             UserRating.class);
     assert userRating != null;
     return userRating.getUserRating().stream().map(rating -> {
-      Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rating.getMovieId(),
-          Movie.class);
-      //      WebClient.Builder way
-      //      Movie movie =
-      //          webClientBuilder.build().get().uri("http://localhost:8082/movies/" + rating.getMovieId())
-      //              .retrieve().bodyToMono(Movie.class).block();
+      Movie movie =
+          restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
       assert movie != null;
       return new CatalogItem(movie.getName(), movie.getDesc(), rating.getRating());
     }).collect(Collectors.toList());
   }
 }
+
+//      WebClient.Builder way
+//      Movie movie =
+//          webClientBuilder.build().get().uri("http://localhost:8082/movies/" + rating.getMovieId())
+//              .retrieve().bodyToMono(Movie.class).block();
